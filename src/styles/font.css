@@ -1,0 +1,71 @@
+@font-face {
+	font-family: 'Geist';
+	font-weight: 900;
+	font-display: swap;
+	src: local('Geist-UltraBlack'), url('/public/static/fonts/geist/Geist-UltraBlack.woff2') format('woff2'),
+		url('/public/static/fonts/geist/Geist-UltraBlack.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Geist';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Geist-Black'), url('/public/static/fonts/geist/Geist-Black.woff2') format('woff2'),
+		url('/public/static/fonts/geist/Geist-Black.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Geist';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Geist-Bold'), url('/public/static/fonts/geist/Geist-Bold.woff2') format('woff2'),
+		url('/public/static/fonts/geist/Geist-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Geist';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Geist-SemiBold'), url('/public/static/fonts/geist/Geist-SemiBold.woff2') format('woff2'),
+		url('/public/static/fonts/geist/Geist-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Geist';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Geist-Medium'), url('/public/static/fonts/geist/Geist-Medium.woff2') format('woff2'),
+		url('/public/static/fonts/geist/Geist-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Geist';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Geist-Regular'), url('/public/static/fonts/geist/Geist-Regular.woff2') format('woff2'),
+		url('/public/static/fonts/geist/Geist-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Geist';
+	font-weight: 300;
+	font-display: swap;
+	src: local('Geist-Light'), url('/public/static/fonts/geist/Geist-Light.woff2') format('woff2'),
+		url('/public/static/fonts/geist/Geist-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Geist';
+	font-weight: 200;
+	font-display: swap;
+	src: local('Geist-UltraLight'), url('/public/static/fonts/geist/Geist-UltraLight.woff2') format('woff2'),
+		url('/public/static/fonts/geist/Geist-UltraLight.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Geist';
+	font-weight: 100;
+	font-display: swap;
+	src: local('Geist-Thin'), url('/public/static/fonts/geist/Geist-Thin.woff2') format('woff2'),
+		url('/public/static/fonts/geist/Geist-Thin.woff') format('woff');
+}

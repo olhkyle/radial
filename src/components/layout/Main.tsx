@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import { ReactNode } from 'react';
 
 interface MainProps {
@@ -5,7 +6,14 @@ interface MainProps {
 }
 
 const Main = ({ children }: MainProps) => {
-	return <>main{children}</>;
+	return <Container>{children}</Container>;
 };
+
+const Container = styled.main`
+	margin: 0 auto;
+	padding: var(--padding-container-mobile);
+	max-width: 960px;
+	width: 100%;
+`;
 
 export default Main;

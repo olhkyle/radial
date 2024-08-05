@@ -1,12 +1,5 @@
-import { ReactNode } from 'react';
 import { Outlet } from 'react-router-dom';
-import Nav from './Nav';
-import Main from './Main';
-import Footer from './Footer';
-
-interface LayoutProps {
-	children: ReactNode;
-}
+import { Nav, Main, Footer } from '.';
 
 const Layout = () => {
 	return (

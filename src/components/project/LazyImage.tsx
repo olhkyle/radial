@@ -8,14 +8,16 @@ interface LazyImageProps {
 	lazy?: boolean;
 }
 
+const placeholderImageUrl: string = '/project/placeholder-gray.webp';
+
 const LazyImage = ({ src, alt, width, height, lazy = true }: LazyImageProps) => {
-	const { elementRef, isLoaded } = useIsImageLoaded(lazy!);
+	const { elementRef, isLoaded } = useIsImageLoaded(lazy);
 
 	return (
 		<img
 			ref={elementRef}
 			alt={alt}
-			src={isLoaded ? src : '/project/placeholder-gray.webp'}
+			src={isLoaded ? src : placeholderImageUrl}
 			style={{ width, height }}
 			sizes="(max-width: 640px) 200px, 300px"
 		/>

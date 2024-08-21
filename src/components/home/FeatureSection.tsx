@@ -9,17 +9,18 @@ interface Description {
 }
 
 const description: Description[] = [
-	{ date: '2024_07', title: 'BaseCampLive', content: 'Web Platform & Admin Service Development', link: externalLink.basecamplive },
-	{ date: '2024_06', title: 'OMH', content: 'Established', link: '/' },
-	{ date: '2023_07', title: 'CBTI', content: 'Web Application UI/UX Design', link: externalLink.cbti },
+	{ date: '2024.07', title: 'BaseCampLive', content: 'Web Platform & Admin Service Development', link: externalLink.basecamplive },
+	{ date: '2024.06', title: 'radial office', content: 'Established', link: '/' },
+	{ date: '2023.07', title: 'CBTI', content: 'Web Application UI/UX Design', link: externalLink.cbti },
+	{ date: '2022.02', title: 'DESIGNTHOU', content: 'Architecture Content Platform', link: externalLink.designthou },
+	{ date: '2020.03', title: '🏢', content: 'Architectural / Interior Design' },
 ];
 
 const FeatureSection = () => {
 	return (
 		<Container>
 			<Header>
-				<Title>2</Title>
-				<span>﹡</span>
+				<Title>﹡﹡</Title>
 			</Header>
 			<Content>
 				<Phrase>
@@ -94,7 +95,9 @@ const Phrase = styled.div`
 	font-weight: var(--fw-black);
 
 	h3 {
+		font-size: var(--fz-h4);
 		font-weight: inherit;
+		color: var(--greyOpacity400);
 	}
 `;
 

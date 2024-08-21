@@ -16,19 +16,18 @@ const skills: string[] = [
 	'SCSS',
 	'',
 	'Node.js',
+	'Express.js',
 	'Firebase',
 	'Supabase',
 	'Git',
 	'Figma',
-	'',
 ];
 
 const SkillSection = () => {
 	return (
 		<Container>
 			<Header>
-				<Title>3</Title>
-				<span>﹡</span>
+				<Title>﹡﹡﹡</Title>
 			</Header>
 			<Content>
 				{skills.map((skill, idx) => (

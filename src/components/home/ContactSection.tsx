@@ -4,15 +4,14 @@ const ContactSection = () => {
 	return (
 		<Container>
 			<Header>
-				<Title>4</Title>
-				<span>﹡</span>
+				<Title>﹡﹡﹡﹡</Title>
 			</Header>
 			<Description>
 				<h3>Get In Touch With </h3>
 				<Phrase>
 					<li>
-						<span>Email _</span>
-						<a href="mailto:idforfe@gmail.com">idforfe@gmail.com</a>
+						<span>Email:to</span>
+						<a href="mailto:me@radial.kr">me@radial.kr</a>
 					</li>
 				</Phrase>
 			</Description>
@@ -54,6 +53,7 @@ const Description = styled.div`
 		margin-bottom: 16px;
 		font-size: var(--fz-h7);
 		font-weight: var(--fw-black);
+		color: var(--greyOpacity400);
 	}
 `;
 
@@ -66,6 +66,11 @@ const Phrase = styled.ul`
 		display: flex;
 		align-items: center;
 		gap: 8px;
+
+		span {
+			font-weight: var(--fw-medium);
+			color: var(--grey700);
+		}
 
 		a {
 			font-weight: var(--fw-semibold);

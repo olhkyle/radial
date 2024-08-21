@@ -7,7 +7,7 @@ interface Description {
 
 const description: Description[] = [
 	{ id: 1, content: 'Develop software-based products' },
-	{ id: 2, content: 'Led by 2 Engineers' },
+	{ id: 2, content: 'Led by 2 Product Engineers' },
 	{ id: 3, content: 'Aim to create neat and well-organized products' },
 ];
 
@@ -15,16 +15,11 @@ const IntroduceSection = () => {
 	return (
 		<Container>
 			<Header>
-				<Title>1</Title>
-				<span>﹡</span>
+				<Title>﹡</Title>
 			</Header>
 			<Content>
 				<Phrase>
-					<h3>O_MH_</h3>
-					<span>=</span>
-					<p>
-						<span>O</span>rganized <span>M</span>et<span>h</span>ods
-					</p>
+					<h3>RADIAL OFFICE</h3>
 				</Phrase>
 				<Description>
 					{description.map(({ id, content }) => (
@@ -87,7 +82,10 @@ const Phrase = styled.div`
 	font-weight: var(--fw-black);
 
 	h3 {
+		font-size: var(--fz-h3);
 		font-weight: inherit;
+		color: var(--white);
+		-webkit-text-stroke: 1px var(--black);
 	}
 
 	p {

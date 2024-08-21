@@ -4,7 +4,7 @@ const Footer = () => {
 	return (
 		<Container>
 			<Year>
-				2023
+				{new Date(Date.now()).toLocaleString('ko').split('.')[0]}
 				<sup>®</sup>
 			</Year>
 			<p>All Rights Reserved.</p>

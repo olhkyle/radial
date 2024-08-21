@@ -7,7 +7,7 @@ const Nav = () => {
 		<Container>
 			<Logo>
 				<a href="/">
-					<img src="/omh.svg" alt="Logo" />
+					<img src="/radial.svg" alt="Logo" />
 				</a>
 			</Logo>
 			<Links>

@@ -199,11 +199,11 @@ const Global = css`
 	}
 
 	::-moz-selection {
-		background: var(--color-green-10);
+		background: var(--blue100);
 	}
 
 	::selection {
-		background: var(--color-green-10);
+		background: var(--blue100);
 	}
 `;
 

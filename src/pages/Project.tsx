@@ -9,7 +9,7 @@ const Project = () => {
 			<Notice>﹡ We Are Going to Share More Projects Soon!</Notice>
 			<Grid>
 				{projects.map(({ title, src, href, completed }) => (
-					<ImageLink to={href} key={href}>
+					<ImageLink to={href} key={href} target="_blank" rel="noopener noreferrer">
 						<LazyImage src={src} alt={title} width={300} height={200} />
 						<p>{title}</p>
 						{!completed && <ComingSoon>Coming Soon</ComingSoon>}

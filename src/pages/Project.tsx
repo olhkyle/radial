@@ -1,21 +1,47 @@
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { LazyImage } from '../components';
-import projects from '../components/project/data';
+import { devProjects, spaceWork } from '../components/project/data';
+import { useState } from 'react';
 
 const Project = () => {
+	const [tab, setTab] = useState<'space' | 'dev'>('space');
+
 	return (
 		<Container>
 			<Notice>﹡ We Are Going to Share More Projects Soon!</Notice>
-			<Grid>
-				{projects.map(({ title, src, href, completed }) => (
-					<ImageLink to={href} key={href} target="_blank" rel="noopener noreferrer">
-						<LazyImage src={src} alt={title} width={300} height={200} />
-						<p>{title}</p>
-						{!completed && <ComingSoon>Coming Soon</ComingSoon>}
-					</ImageLink>
-				))}
-			</Grid>
+
+			<Tabs>
+				<Tab type="button" id="space" current={tab === 'space'} onClick={() => setTab('space')}>
+					Space
+				</Tab>
+				<Tab type="button" id="dev" current={tab === 'dev'} onClick={() => setTab('dev')}>
+					Dev
+				</Tab>
+			</Tabs>
+			{tab === 'dev' && (
+				<Grid>
+					{devProjects.map(({ title, src, href, completed }) => (
+						<ImageLink to={href} key={href} target="_blank" rel="noopener noreferrer">
+							<LazyImage src={src} alt={title} width={300} height={200} />
+							<p>{title}</p>
+							{!completed && <ComingSoon>Coming Soon</ComingSoon>}
+						</ImageLink>
+					))}
+				</Grid>
+			)}
+			{tab === 'space' && (
+				<SpaceWork>
+					{spaceWork.map(({ title, href, year }) => (
+						<div>
+							<span>{year}</span>
+							<Link to={href ?? '#'} target="_blank">
+								{title}
+							</Link>
+						</div>
+					))}
+				</SpaceWork>
+			)}
 		</Container>
 	);
 };
@@ -29,6 +55,26 @@ const Notice = styled.p`
 	padding: var(--padding-container-mobile);
 	border: 1px solid var(--greyOpacity200);
 	background-color: var(--greyOpacity50);
+`;
+
+const Tabs = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 32px;
+	width: 150px;
+	background-color: var(--greyOpacity50);
+	border: 1px solid var(--grey200);
+	border-radius: var(--radius-xs);
+`;
+
+const Tab = styled.button<{ current: boolean }>`
+	padding: calc(var(--padding-container-mobile) / 2) var(--padding-container-mobile);
+	font-size: var(--fz-h7);
+	font-weight: var(--fw-bold);
+	color: ${({ current }) => (current ? 'var(--white)' : 'var(--black)')};
+	background-color: ${({ current }) => current && 'var(--black)'};
+	border-radius: var(--radius-s);
 `;
 
 const Grid = styled.div`
@@ -102,6 +148,24 @@ const ComingSoon = styled.span`
 	color: var(--white);
 	background: linear-gradient(to right, var(--blue200), var(--blue100));
 	border-radius: var(--radius-s);
+`;
+
+const SpaceWork = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+	margin: 32px 0;
+
+	div {
+		display: flex;
+		gap: 16px;
+		font-size: var(--fz-h6);
+		font-weight: var(--fw-medium);
+	}
+
+	a {
+		font-weight: var(--fw-bold);
+	}
 `;
 
 export default Project;

@@ -6,7 +6,7 @@ const Home = () => {
 		<Container>
 			<IntroduceSection />
 			<FeatureSection />
-			<SkillSection />
+			{/* <SkillSection /> */}
 			<ContactSection />
 		</Container>
 	);

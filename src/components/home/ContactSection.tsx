@@ -4,14 +4,14 @@ const ContactSection = () => {
 	return (
 		<Container>
 			<Header>
-				<Title>﹡﹡﹡﹡</Title>
+				<Title>﹡﹡</Title>
 			</Header>
 			<Description>
 				<h3>Get In Touch With </h3>
 				<Phrase>
 					<li>
 						<span>Email:to</span>
-						<a href="mailto:me@radial.kr">me@radial.kr</a>
+						<a href="mailto:studiorradial@gmail.com">studiorradial@gmail.com</a>
 					</li>
 				</Phrase>
 			</Description>

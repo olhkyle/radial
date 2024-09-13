@@ -9,8 +9,12 @@ interface Description {
 }
 
 const description: Description[] = [
+	{ date: '2024.09', title: 'PUREDA(on going)', content: 'Interior Design', link: externalLink.pureda },
+	{ date: '2024.04', title: 'Cafe Far *', content: 'Interior Design', link: externalLink.farben },
+	{ date: '2024.02', title: 'Obscura Paju Shinsegae Outlet', content: 'Interior Design', link: externalLink.obscura_paju },
+	{ date: '2024.01', title: 'Obscura Suwon Starfield', content: 'Interior Design', link: externalLink.obscura_suwon },
 	{ date: '2024.07', title: 'BaseCampLive', content: 'Web Platform & Admin Service Development', link: externalLink.basecamplive },
-	{ date: '2024.06', title: 'radial office', content: 'Established', link: '/' },
+	{ date: '2024.06', title: 'radial', content: 'Established', link: '/' },
 	{ date: '2023.07', title: 'CBTI', content: 'Web Application UI/UX Design', link: externalLink.cbti },
 	{ date: '2022.02', title: 'DESIGNTHOU', content: 'Architecture Content Platform', link: externalLink.designthou },
 	{ date: '2020.03', title: '🏢', content: 'Architectural / Interior Design' },
@@ -20,7 +24,7 @@ const FeatureSection = () => {
 	return (
 		<Container>
 			<Header>
-				<Title>﹡﹡</Title>
+				<Title>﹡</Title>
 			</Header>
 			<Content>
 				<Phrase>
@@ -83,7 +87,7 @@ const Content = styled.div`
 	background-color: var(--white);
 
 	@media screen and (min-width: 640px) {
-		grid-template-columns: 1fr 2fr;
+		grid-template-columns: 1fr 2.5fr;
 	}
 `;
 
@@ -95,7 +99,7 @@ const Phrase = styled.div`
 	font-weight: var(--fw-black);
 
 	h3 {
-		font-size: var(--fz-h4);
+		font-size: var(--fz-h7);
 		font-weight: inherit;
 		color: var(--greyOpacity400);
 	}
@@ -114,12 +118,12 @@ const Description = styled.ul`
 		div {
 			display: flex;
 			gap: 16px;
-			min-width: 200px;
+			min-width: 320px;
 		}
 
 		span:first-of-type {
 			display: inline-block;
-
+			min-width: 60px;
 			color: var(--black);
 		}
 

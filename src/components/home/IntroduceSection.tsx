@@ -28,7 +28,6 @@ const Phrase = styled.div`
 		font-weight: inherit;
 		color: var(--white);
 		-webkit-text-stroke: 1px var(--black);
-
 		span {
 			color: var(--black);
 		}

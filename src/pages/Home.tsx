@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ContactSection, FeatureSection, IntroduceSection, SkillSection } from '../components';
+import { ContactSection, FeatureSection, IntroduceSection } from '../components';
 
 const Home = () => {
 	return (

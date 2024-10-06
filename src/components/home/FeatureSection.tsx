@@ -9,15 +9,15 @@ interface Description {
 }
 
 const description: Description[] = [
-	{ date: '2024.09', title: 'PUREDA(on going)', content: 'Interior Design', link: externalLink.pureda },
-	{ date: '2024.04', title: 'Cafe Far *', content: 'Interior Design', link: externalLink.farben },
+	{ date: '2024.09', title: 'Pureda(on going)', content: 'Interior Design', link: externalLink.pureda },
+	{ date: '2024.04', title: 'Cafe Farben', content: 'Interior Design', link: externalLink.farben },
 	{ date: '2024.02', title: 'Obscura Paju Shinsegae Outlet', content: 'Interior Design', link: externalLink.obscura_paju },
 	{ date: '2024.01', title: 'Obscura Suwon Starfield', content: 'Interior Design', link: externalLink.obscura_suwon },
 	{ date: '2024.07', title: 'BaseCampLive', content: 'Web Platform & Admin Service Development', link: externalLink.basecamplive },
-	{ date: '2024.06', title: 'radial', content: 'Established', link: '/' },
+	{ date: '2024.06', title: 'Radial', content: 'Established', link: '/' },
 	{ date: '2023.07', title: 'CBTI', content: 'Web Application UI/UX Design', link: externalLink.cbti },
 	{ date: '2022.02', title: 'DESIGNTHOU', content: 'Architecture Content Platform', link: externalLink.designthou },
-	{ date: '2020.03', title: '🏢', content: 'Architectural / Interior Design' },
+	{ date: '2019.11', title: '🏢', content: 'Architectural / Interior Design' },
 ];
 
 const FeatureSection = () => {

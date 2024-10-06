@@ -2,9 +2,10 @@ import './styles/font.css';
 import { Global } from '@emotion/react';
 import GlobalStyle from './styles/GlobalStyle';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Home, Project } from './pages';
+import { Home, Project, ProjectDetail } from './pages';
 import { Layout } from './components';
 import route from './constants/route';
+import ProjectLayout from './components/project/ProjectLayout';
 
 const router = createBrowserRouter([
 	{
@@ -17,7 +18,14 @@ const router = createBrowserRouter([
 			},
 			{
 				path: route.PROJECT,
-				element: <Project />,
+				element: <ProjectLayout />,
+				children: [
+					{ index: true, element: <Project /> },
+					{
+						path: `:title`,
+						element: <ProjectDetail />,
+					},
+				],
 			},
 		],
 	},

@@ -1,22 +1,21 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { LazyImage } from '../components';
 import { devProjects, spaceWork } from '../components/project/data';
-import { useState } from 'react';
 
 const Project = () => {
-	const [tab, setTab] = useState<'space' | 'dev'>('space');
+	const [tab, setTab] = useState<'space' | 'dev'>('dev');
 
 	return (
 		<Container>
-			<Notice>﹡ We Are Going to Share More Projects Soon!</Notice>
-
+			<Notice>﹡ We are going to share more projects soon!</Notice>
 			<Tabs>
-				<Tab type="button" id="space" current={tab === 'space'} onClick={() => setTab('space')}>
-					Space
-				</Tab>
 				<Tab type="button" id="dev" current={tab === 'dev'} onClick={() => setTab('dev')}>
 					Dev
+				</Tab>
+				<Tab type="button" id="space" current={tab === 'space'} onClick={() => setTab('space')}>
+					Space
 				</Tab>
 			</Tabs>
 			{tab === 'dev' && (
@@ -32,12 +31,10 @@ const Project = () => {
 			)}
 			{tab === 'space' && (
 				<SpaceWork>
-					{spaceWork.map(({ title, href, year }) => (
-						<div>
+					{spaceWork.map(({ title, year }) => (
+						<div key={title}>
 							<span>{year}</span>
-							<Link to={href ?? '#'} target="_blank">
-								{title}
-							</Link>
+							<Link to={`/project/${title}`}>{title}</Link>
 						</div>
 					))}
 				</SpaceWork>
@@ -74,7 +71,7 @@ const Tab = styled.button<{ current: boolean }>`
 	font-weight: var(--fw-bold);
 	color: ${({ current }) => (current ? 'var(--white)' : 'var(--black)')};
 	background-color: ${({ current }) => current && 'var(--black)'};
-	border-radius: var(--radius-s);
+	border-radius: var(--radius-xs);
 `;
 
 const Grid = styled.div`
@@ -98,7 +95,6 @@ const ImageLink = styled(Link)`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	/* min-height: 200px; */
 	border: 1px solid var(--greyOpacity300);
 	object-fit: cover;
 
@@ -165,6 +161,11 @@ const SpaceWork = styled.div`
 
 	a {
 		font-weight: var(--fw-bold);
+		transition: color 0.15s ease-in-out;
+	}
+
+	a:hover {
+		color: var(--grey500);
 	}
 `;
 

@@ -205,6 +205,10 @@ const Global = css`
 	::selection {
 		background: var(--blue100);
 	}
+
+	.clip-path-button {
+		clip-path: polygon(0 0, 100% 0, 100% 70%, 80.5% 100%, 0 100%);
+	}
 `;
 
 export default Global;

@@ -16,7 +16,7 @@ const Container = styled.footer`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0 auto;
+	margin: 64px auto 0;
 	padding: 0 var(--padding-container-mobile);
 	max-width: 960px;
 	min-height: var(--nav-height);

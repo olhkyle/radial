@@ -8,21 +8,21 @@ interface DevProject {
 }
 
 const devProjects: DevProject[] = [
-	{ title: 'tekt.log', src: '/project/craft.png', href: 'https://log.lazykyle.me', completed: false },
-	{ title: 'basecamplive', src: '/project/isometric.webp', href: 'https://bclive.co.kr', completed: true },
-	{ title: 'dta', src: '/project/dta.png', href: 'https://construction-ttax-d7e7d.web.app/', completed: true },
+	{ title: 'tekt.log', src: '/project/dev/craft.png', href: 'https://tektlog.vercel.app', completed: false },
+	{ title: 'basecamplive', src: '/project/dev/isometric.webp', href: 'https://bclive.co.kr', completed: true },
+	{ title: 'dta', src: '/project/dev/dta.png', href: 'https://construction-ttax-d7e7d.web.app/', completed: true },
 	{
 		title: 'cbc',
-		src: '/project/cbti.webp',
+		src: '/project/dev/cbti.webp',
 		href: 'https://www.figma.com/design/sWpaLRFWbu8Agu3tMiH1J1/CBC?node-id=0-1&t=JixNoz2lSWLlRBu3-1',
 		completed: true,
 	},
-	{ title: 'designthou', src: '/project/designthou.png', href: 'https://designthou.com/', completed: true },
-	{ title: 'fineapple', src: '/project/fineapple.png', href: 'https://fineapple-ea261.web.app/', completed: true },
+	{ title: 'designthou', src: '/project/dev/designthou.png', href: 'https://designthou.com/', completed: true },
+	{ title: 'fineapple', src: '/project/dev/fineapple.png', href: 'https://fineapple-ea261.web.app/', completed: true },
 
-	{ title: 'vanilla-trello', src: '/project/vanilla-trello.png', href: 'https://vanilla-trello-lime.vercel.app/', completed: true },
-	{ title: 'esc', src: '/project/esc.jpeg', href: 'https://youtu.be/ndIasEiODu4', completed: true },
-	{ title: 'lcc', src: '/project/lcc.png', href: 'https://first-responsive-web-three.vercel.app/', completed: true },
+	{ title: 'vanilla-trello', src: '/project/dev/vanilla-trello.png', href: 'https://vanilla-trello-lime.vercel.app/', completed: true },
+	{ title: 'esc', src: '/project/dev/esc.jpeg', href: 'https://youtu.be/ndIasEiODu4', completed: true },
+	{ title: 'lcc', src: '/project/dev/lcc.png', href: 'https://first-responsive-web-three.vercel.app/', completed: true },
 ];
 
 interface SpaceWork {
@@ -95,6 +95,7 @@ const spaceWork: SpaceWork[] = [
 	{
 		title: 'Bed Side Table, Stool for Personal',
 		imgSrc: [
+			'/project/design/2020/two furnitures plan.png',
 			'/project/design/2020/stool with bedside table.jpg',
 			'/project/design/2020/bedside table-1.JPG',
 			'/project/design/2020/bedside table-2.jpg',

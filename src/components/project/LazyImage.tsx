@@ -3,8 +3,8 @@ import { useIsImageLoaded } from '../../hooks/useIsImageLoaded';
 interface LazyImageProps {
 	src: string;
 	alt: string;
-	width: number | '100%';
-	height: number | '100%';
+	width: number | '100%' | 'auto';
+	height: number | '100%' | 'auto';
 	lazy?: boolean;
 }
 

@@ -7,12 +7,17 @@ const ContactSection = () => {
 				<Title>﹡﹡</Title>
 			</Header>
 			<Description>
-				<h3>Get In Touch With </h3>
 				<Phrase>
-					<li>
-						<span>Email:to</span>
-						<a href="mailto:studiorradial@gmail.com">studiorradial@gmail.com</a>
-					</li>
+					<a href="mailto:studiorradial@gmail.com" className="clip-path-button" target="_blank" rel="noopener noreferrer">
+						EMAIL
+					</a>
+					<a
+						href="https://www.instagram.com/radial.kr/profilecard/?igsh=NTVnZXdub20wOXFi"
+						className="clip-path-button"
+						target="_blank"
+						rel="noopener noreferrer">
+						INSTAGRAM
+					</a>
 				</Phrase>
 			</Description>
 		</Container>
@@ -21,7 +26,6 @@ const ContactSection = () => {
 
 const Container = styled.section`
 	width: 100%;
-	border-bottom: 1px solid var(--black);
 `;
 
 const Header = styled.div`
@@ -57,26 +61,22 @@ const Description = styled.div`
 	}
 `;
 
-const Phrase = styled.ul`
-	position: relative;
+const Phrase = styled.div`
 	display: flex;
-	flex-direction: column;
+	gap: 16px;
 
-	li {
-		display: flex;
-		align-items: center;
-		gap: 8px;
+	a {
+		padding: calc(var(--padding-container-mobile) / 2) var(--padding-container-mobile);
+		width: 120px;
+		font-weight: var(--fw-semibold);
+		background-color: var(--black);
+		color: var(--white);
+		text-align: center;
+	}
 
-		span {
-			font-weight: var(--fw-medium);
-			color: var(--grey700);
-		}
-
-		a {
-			font-weight: var(--fw-semibold);
-			text-decoration: underline;
-			text-underline-offset: 2px;
-		}
+	a:hover {
+		background-color: var(--grey800);
+		transition: background 0.15s ease-in-out;
 	}
 `;
 

@@ -10,14 +10,13 @@ interface Description {
 
 const description: Description[] = [
 	{ date: '2024.09', title: 'Pureda(on going)', content: 'Interior Design', link: externalLink.pureda },
+	{ date: '2024.07', title: 'BaseCampLive', content: 'Web Platform & Admin Service Development', link: externalLink.basecamplive },
 	{ date: '2024.04', title: 'Cafe Farben', content: 'Interior Design', link: externalLink.farben },
 	{ date: '2024.02', title: 'Obscura Paju Shinsegae Outlet', content: 'Interior Design', link: externalLink.obscura_paju },
 	{ date: '2024.01', title: 'Obscura Suwon Starfield', content: 'Interior Design', link: externalLink.obscura_suwon },
-	{ date: '2024.07', title: 'BaseCampLive', content: 'Web Platform & Admin Service Development', link: externalLink.basecamplive },
-	{ date: '2024.06', title: 'Radial', content: 'Established', link: '/' },
 	{ date: '2023.07', title: 'CBTI', content: 'Web Application UI/UX Design', link: externalLink.cbti },
 	{ date: '2022.02', title: 'DESIGNTHOU', content: 'Architecture Content Platform', link: externalLink.designthou },
-	{ date: '2019.11', title: '🏢', content: 'Architectural / Interior Design' },
+	{ date: '2019.11 ~ 2021.12', title: '🏢 7 projects ', content: 'Architectural / Interior Design' },
 ];
 
 const FeatureSection = () => {
@@ -35,13 +34,15 @@ const FeatureSection = () => {
 						<li key={`${content}_${idx}`}>
 							<div>
 								<span>{date}</span>
-								{link ? (
-									<a href={link} target="_blank" rel="noopener noreferrer ">
-										{title}
-									</a>
-								) : (
-									<span>{title}</span>
-								)}
+								<LinkTitle>
+									{link ? (
+										<a href={link} target="_blank" rel="noopener noreferrer">
+											{title}
+										</a>
+									) : (
+										<span>{title}</span>
+									)}
+								</LinkTitle>
 							</div>
 							<p>{content}</p>
 						</li>
@@ -87,7 +88,7 @@ const Content = styled.div`
 	background-color: var(--white);
 
 	@media screen and (min-width: 640px) {
-		grid-template-columns: 1fr 2.5fr;
+		grid-template-columns: 1fr 5fr;
 	}
 `;
 
@@ -108,22 +109,29 @@ const Phrase = styled.div`
 const Description = styled.ul`
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 8px;
 
 	li {
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
+		padding: calc(var(--padding-container-mobile) / 2) 0;
+		border-bottom: 1px solid var(--grey100);
 
 		div {
 			display: flex;
-			gap: 16px;
-			min-width: 320px;
+			flex-direction: column;
+			min-width: 40px;
+
+			@media screen and (min-width: 640px) {
+				flex-direction: row;
+				gap: 16px;
+			}
 		}
 
 		span:first-of-type {
 			display: inline-block;
-			min-width: 60px;
+			min-width: 150px;
 			color: var(--black);
 		}
 
@@ -142,9 +150,15 @@ const Description = styled.ul`
 
 		@media screen and (min-width: 640px) {
 			flex-direction: row;
+			justify-content: space-between;
 			gap: 12px;
+			border: none;
 		}
 	}
+`;
+
+const LinkTitle = styled.div`
+	font-size: var(--fz-h7);
 `;
 
 export default FeatureSection;

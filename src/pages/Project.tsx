@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { MdGridView } from 'react-icons/md';
+import { CiBoxList } from 'react-icons/ci';
 import { LazyImage } from '../components';
 import { devProjects, spaceWork } from '../components/project/data';
 
+const placeholderImageUrl: string = '/project/placeholder.webp';
+
 const Project = () => {
 	const [tab, setTab] = useState<'space' | 'dev'>('dev');
+	const [displayMethod, setDisplayMethod] = useState<'grid' | 'list'>('grid');
 
 	return (
 		<Container>
@@ -18,8 +23,20 @@ const Project = () => {
 					Space
 				</Tab>
 			</Tabs>
+
+			{tab === 'space' && (
+				<GridOrList>
+					<Target type="button" id="grid" current={displayMethod === 'grid'} onClick={() => setDisplayMethod('grid')}>
+						<MdGridView size="24" color={displayMethod === 'grid' ? 'var(--white)' : 'var(--black)'} />
+					</Target>
+					<Target type="button" id="list" current={displayMethod === 'list'} onClick={() => setDisplayMethod('list')}>
+						<CiBoxList size="24" color={displayMethod === 'list' ? 'var(--white)' : 'var(--black)'} />
+					</Target>
+				</GridOrList>
+			)}
+
 			{tab === 'dev' && (
-				<Grid>
+				<DevProjectGrid>
 					{devProjects.map(({ title, src, href, completed }) => (
 						<ImageLink to={href} key={href} target="_blank" rel="noopener noreferrer">
 							<LazyImage src={src} alt={title} width={300} height={200} />
@@ -27,18 +44,35 @@ const Project = () => {
 							{!completed && <ComingSoon>Coming Soon</ComingSoon>}
 						</ImageLink>
 					))}
-				</Grid>
+				</DevProjectGrid>
 			)}
-			{tab === 'space' && (
-				<SpaceWork>
-					{spaceWork.map(({ title, year }) => (
-						<div key={title}>
-							<span>{year}</span>
-							<Link to={`/project/${title}`}>{title}</Link>
-						</div>
-					))}
-				</SpaceWork>
-			)}
+
+			{tab === 'space' &&
+				(displayMethod === 'grid' ? (
+					<SpaceWorkGrid>
+						{spaceWork.map(({ title, year, imgSrc }) => (
+							<ImageLink to={`/project/${title}`} key={title}>
+								<LazyImage
+									src={Array.isArray(imgSrc) ? imgSrc[0] : imgSrc ? imgSrc : placeholderImageUrl}
+									alt={`${year}-${title}`}
+									width={'100%'}
+									height={'auto'}
+								/>
+								<p>{title}</p>
+								{title.includes('on going') && <ComingSoon>Coming Soon</ComingSoon>}
+							</ImageLink>
+						))}
+					</SpaceWorkGrid>
+				) : (
+					<SpaceWorkList>
+						{spaceWork.map(({ title, year }) => (
+							<div key={title}>
+								<span>{year}</span>
+								<Link to={`/project/${title}`}>{title}</Link>
+							</div>
+						))}
+					</SpaceWorkList>
+				))}
 		</Container>
 	);
 };
@@ -62,7 +96,6 @@ const Tabs = styled.div`
 	width: 150px;
 	background-color: var(--greyOpacity50);
 	border: 1px solid var(--grey200);
-	border-radius: var(--radius-xs);
 `;
 
 const Tab = styled.button<{ current: boolean }>`
@@ -71,10 +104,25 @@ const Tab = styled.button<{ current: boolean }>`
 	font-weight: var(--fw-bold);
 	color: ${({ current }) => (current ? 'var(--white)' : 'var(--black)')};
 	background-color: ${({ current }) => current && 'var(--black)'};
-	border-radius: var(--radius-xs);
 `;
 
-const Grid = styled.div`
+const GridOrList = styled.div`
+	display: flex;
+	gap: 8px;
+	justify-content: flex-end;
+`;
+
+const Target = styled.button<{ current: boolean }>`
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: calc(var(--padding-container-mobile) / 2) calc(var(--padding-container-mobile) / 2);
+	color: ${({ current }) => (current ? 'var(--white)' : 'var(--black)')};
+	background-color: ${({ current }) => current && 'var(--black)'};
+	border: 1px solid var(--grey200);
+`;
+
+const DevProjectGrid = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 16px;
@@ -111,12 +159,14 @@ const ImageLink = styled(Link)`
 		top: 50%;
 		left: 50%;
 		padding: var(--padding-container-mobile);
+		width: 100%;
 		color: var(--white);
 		background-color: var(--greyOpacity50);
 		-webkit-text-stroke: 1px var(--black);
 		border: none;
 		font-size: var(--fz-h4);
 		font-weight: var(--fw-black);
+		text-align: center;
 		transform: translate3d(-50%, -50%, 0);
 		z-index: var(--nav-index);
 	}
@@ -125,6 +175,9 @@ const ImageLink = styled(Link)`
 		img {
 			filter: none;
 		}
+
+		border: 1px solid var(--grey900);
+		transition: border 0.15s ease-in;
 	}
 
 	@media screen and (min-width: 960px) {
@@ -146,7 +199,22 @@ const ComingSoon = styled.span`
 	border-radius: var(--radius-s);
 `;
 
-const SpaceWork = styled.div`
+const SpaceWorkGrid = styled.div`
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 16px;
+	margin-top: 32px;
+
+	a {
+		position: relative;
+	}
+
+	@media screen and (min-width: 640px) {
+		grid-template-columns: 1fr 1fr;
+	}
+`;
+
+const SpaceWorkList = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 32px;

@@ -38,8 +38,24 @@ interface SpaceWork {
 
 const spaceWork: SpaceWork[] = [
 	{
-		title: 'Pureda(on going)',
+		title: 'Pureda',
 		href: externalLink.pureda,
+		imgSrc: [
+			'/project/design/2024/pureda/plan.png',
+			'/project/design/2024/pureda/isometric1.png',
+			'/project/design/2024/pureda/isometric2.png',
+			'/project/design/2024/pureda/1-1.png',
+			'/project/design/2024/pureda/2.png',
+			'/project/design/2024/pureda/3.png',
+			'/project/design/2024/pureda/4.png',
+			'/project/design/2024/pureda/5.png',
+			'/project/design/2024/pureda/6.png',
+			'/project/design/2024/pureda/6-1.png',
+			'/project/design/2024/pureda/7.png',
+			'/project/design/2024/pureda/8.png',
+			'/project/design/2024/pureda/8-1.png',
+			'/project/design/2024/pureda/9.png',
+		],
 		usage: 'Fashion Store',
 		role: 'Design / PM / CM',
 		field: 'Interior',

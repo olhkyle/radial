@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { MdGridView } from 'react-icons/md';
 import { CiBoxList } from 'react-icons/ci';
@@ -37,12 +38,19 @@ const Project = () => {
 
 			{tab === 'dev' && (
 				<DevProjectGrid>
-					{devProjects.map(({ title, src, href, completed }) => (
-						<ImageLink to={href} key={href} target="_blank" rel="noopener noreferrer">
-							<LazyImage src={src} alt={title} width={300} height={200} />
-							<p>{title}</p>
-							{!completed && <ComingSoon>Coming Soon</ComingSoon>}
-						</ImageLink>
+					{devProjects.map(({ title, src, href, completed }, idx) => (
+						<motion.div
+							key={href}
+							initial={{ y: 30, opacity: 0 }}
+							whileInView={{ y: 0, opacity: 1 }}
+							transition={{ duration: 0.3, delay: 0.2 * idx, ease: 'easeInOut' }}
+							viewport={{ once: true }}>
+							<ImageLink to={href} target="_blank" rel="noopener noreferrer">
+								<LazyImage src={src} alt={title} width={300} height={200} />
+								<p>{title}</p>
+								{!completed && <ComingSoon>Coming Soon</ComingSoon>}
+							</ImageLink>
+						</motion.div>
 					))}
 				</DevProjectGrid>
 			)}
@@ -50,17 +58,24 @@ const Project = () => {
 			{tab === 'space' &&
 				(displayMethod === 'grid' ? (
 					<SpaceWorkGrid>
-						{spaceWork.map(({ title, year, imgSrc }) => (
-							<ImageLink to={`/project/${title}`} key={title}>
-								<LazyImage
-									src={Array.isArray(imgSrc) ? imgSrc[0] : imgSrc ? imgSrc : placeholderImageUrl}
-									alt={`${year}-${title}`}
-									width={'100%'}
-									height={'auto'}
-								/>
-								<p>{title}</p>
-								{title.includes('on going') && <ComingSoon>Coming Soon</ComingSoon>}
-							</ImageLink>
+						{spaceWork.map(({ title, year, imgSrc }, idx) => (
+							<motion.div
+								key={title}
+								initial={{ y: 50, opacity: 0 }}
+								whileInView={{ y: 0, opacity: 1 }}
+								transition={{ duration: 0.5, delay: 0.1 * idx, ease: 'easeInOut' }}
+								viewport={{ once: true }}>
+								<ImageLink to={`/project/${title}`} key={title}>
+									<LazyImage
+										src={Array.isArray(imgSrc) ? imgSrc[0] : imgSrc ? imgSrc : placeholderImageUrl}
+										alt={`${year}-${title}`}
+										width={'100%'}
+										height={'auto'}
+									/>
+									<p>{title}</p>
+									{title.includes('on going') && <ComingSoon>Coming Soon</ComingSoon>}
+								</ImageLink>
+							</motion.div>
 						))}
 					</SpaceWorkGrid>
 				) : (

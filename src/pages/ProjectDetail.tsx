@@ -3,6 +3,7 @@ import { RiArrowLeftSLine } from 'react-icons/ri';
 import { Link, useParams } from 'react-router-dom';
 import { spaceWork } from '../components/project/data';
 import { LazyImage } from '../components';
+import route from '../constants/route';
 
 const ProjectDetail = () => {
 	const { title } = useParams();
@@ -11,7 +12,7 @@ const ProjectDetail = () => {
 
 	return (
 		<div>
-			<GoBackLink to="/project">
+			<GoBackLink to={route.HOME}>
 				<RiArrowLeftSLine size="21" color="black" />
 				Work List
 			</GoBackLink>
@@ -40,9 +41,9 @@ const ProjectDetail = () => {
 			</Header>
 			<Body>
 				{Array.isArray(detailData?.imgSrc) ? (
-					detailData?.imgSrc.map(image => <LazyImage key={image} src={image} alt={image} width={'100%'} height={'100%'} />)
+					detailData?.imgSrc.map(image => <LazyImage key={image} src={image} alt={image} width={'auto'} height={'auto'} />)
 				) : detailData?.imgSrc ? (
-					<LazyImage src={detailData?.imgSrc!} alt={detailData?.imgSrc!} width={'100%'} height={'100%'} />
+					<LazyImage src={detailData?.imgSrc!} alt={detailData?.imgSrc!} width={'auto'} height={'auto'} />
 				) : (
 					<EmptyImageMessage>﹡ Plan and Images will be shared soon, after Construction Completion !</EmptyImageMessage>
 				)}

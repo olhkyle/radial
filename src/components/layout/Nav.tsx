@@ -11,8 +11,8 @@ const Nav = () => {
 				</a>
 			</Logo>
 			<Links>
-				<Link to={`${route.HOME}`}>About</Link>
-				<Link to={`${route.PROJECT}`}>Project</Link>
+				<Link to={`${route.HOME}`}>Project</Link>
+				<Link to={`${route.ABOUT}`}>About</Link>
 			</Links>
 		</Container>
 	);

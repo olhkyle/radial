@@ -23,4 +23,5 @@ const LazyImage = ({ src, alt, width, height, lazy = true }: LazyImageProps) => 
 		/>
 	);
 };
+
 export default LazyImage;

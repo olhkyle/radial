@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
-import { ContactSection, FeatureSection, IntroduceSection } from '../components';
+import { IntroduceSection } from '../components';
 
+/** Currently Unused */
 const Home = () => {
 	return (
 		<Container>
 			<IntroduceSection />
-			<FeatureSection />
-			<ContactSection />
 		</Container>
 	);
 };

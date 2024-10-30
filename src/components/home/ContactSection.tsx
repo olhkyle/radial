@@ -6,20 +6,7 @@ const ContactSection = () => {
 			<Header>
 				<Title>﹡﹡</Title>
 			</Header>
-			<Description>
-				<Phrase>
-					<a href="mailto:studiorradial@gmail.com" className="clip-path-button" target="_blank" rel="noopener noreferrer">
-						EMAIL
-					</a>
-					<a
-						href="https://www.instagram.com/radial.kr/profilecard/?igsh=NTVnZXdub20wOXFi"
-						className="clip-path-button"
-						target="_blank"
-						rel="noopener noreferrer">
-						INSTAGRAM
-					</a>
-				</Phrase>
-			</Description>
+			<Description></Description>
 		</Container>
 	);
 };
@@ -58,25 +45,6 @@ const Description = styled.div`
 		font-size: var(--fz-h7);
 		font-weight: var(--fw-black);
 		color: var(--greyOpacity400);
-	}
-`;
-
-const Phrase = styled.div`
-	display: flex;
-	gap: 16px;
-
-	a {
-		padding: calc(var(--padding-container-mobile) / 2) var(--padding-container-mobile);
-		width: 120px;
-		font-weight: var(--fw-semibold);
-		background-color: var(--black);
-		color: var(--white);
-		text-align: center;
-	}
-
-	a:hover {
-		background-color: var(--grey800);
-		transition: background 0.15s ease-in-out;
 	}
 `;
 

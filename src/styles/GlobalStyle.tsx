@@ -138,7 +138,7 @@ const Global = css`
 		height: 100%;
 		line-height: var(--line-height-base);
 		font-size: var(--fz-p);
-		background-color: var(--greyOpacity50);
+		background-color: var(--white);
 	}
 
 	h1,

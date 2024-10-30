@@ -15,7 +15,7 @@ const Project = () => {
 
 	return (
 		<Container>
-			<Notice>﹡ We are going to share more projects soon!</Notice>
+			<Notice>﹡ Radial Studio﹒based in Seoul, Korea</Notice>
 			<Tabs>
 				<Tab type="button" id="dev" current={tab === 'dev'} onClick={() => setTab('dev')}>
 					Dev
@@ -43,7 +43,7 @@ const Project = () => {
 							key={href}
 							initial={{ y: 30, opacity: 0 }}
 							whileInView={{ y: 0, opacity: 1 }}
-							transition={{ duration: 0.3, delay: 0.2 * idx, ease: 'easeInOut' }}
+							transition={{ duration: 0.3, delay: 0.15 * idx, ease: 'easeInOut' }}
 							viewport={{ once: true }}>
 							<ImageLink to={href} target="_blank" rel="noopener noreferrer">
 								<LazyImage src={src} alt={title} width={300} height={200} />
@@ -100,6 +100,7 @@ const Container = styled.div`
 const Notice = styled.p`
 	padding: var(--padding-container-mobile);
 	border: 1px solid var(--greyOpacity200);
+	font-weight: var(--fw-medium);
 	background-color: var(--greyOpacity50);
 `;
 
@@ -108,14 +109,15 @@ const Tabs = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 32px;
-	width: 150px;
+	width: 140px;
 	background-color: var(--greyOpacity50);
 	border: 1px solid var(--grey200);
 `;
 
 const Tab = styled.button<{ current: boolean }>`
-	padding: calc(var(--padding-container-mobile) / 2) var(--padding-container-mobile);
-	font-size: var(--fz-h7);
+	padding: calc(var(--padding-container-mobile) / 2);
+	min-width: 70px;
+	font-size: var(--fz-p);
 	font-weight: var(--fw-bold);
 	color: ${({ current }) => (current ? 'var(--white)' : 'var(--black)')};
 	background-color: ${({ current }) => current && 'var(--black)'};
@@ -141,7 +143,7 @@ const DevProjectGrid = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 16px;
-	margin-top: 64px;
+	margin-top: 32px;
 
 	@media screen and (min-width: 640px) {
 		grid-template-columns: repeat(2, 1fr);

@@ -2,7 +2,7 @@ import './styles/font.css';
 import { Global } from '@emotion/react';
 import GlobalStyle from './styles/GlobalStyle';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Home, Project, ProjectDetail } from './pages';
+import { About, Project, ProjectDetail } from './pages';
 import { Layout } from './components';
 import route from './constants/route';
 import ProjectLayout from './components/project/ProjectLayout';
@@ -13,19 +13,18 @@ const router = createBrowserRouter([
 		element: <Layout />,
 		children: [
 			{
-				index: true,
-				element: <Home />,
-			},
-			{
-				path: route.PROJECT,
 				element: <ProjectLayout />,
 				children: [
 					{ index: true, element: <Project /> },
 					{
-						path: `:title`,
+						path: `/project/:title`,
 						element: <ProjectDetail />,
 					},
 				],
+			},
+			{
+				path: route.ABOUT,
+				element: <About />,
 			},
 		],
 	},

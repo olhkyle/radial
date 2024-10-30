@@ -14,10 +14,10 @@ const Footer = () => {
 			</LeftSection>
 			<RightSection>
 				<a href={`mailto:${STUDIO_EMAIL_LINK}`} target="_blank" rel="noopener noreferrer">
-					<img src="/public/svgs/email.svg" alt="email svg" />
+					<img src="/svgs/email.svg" alt="email svg" />
 				</a>
 				<a href={INSTAGRAM_PROFILE_LINK} target="_blank" rel="noopener noreferrer">
-					<img src="/public/svgs/instagram.svg" alt="instagram svg" />
+					<img src="/svgs/instagram.svg" alt="instagram svg" />
 				</a>
 			</RightSection>
 		</Container>
